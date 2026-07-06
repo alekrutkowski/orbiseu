@@ -3,9 +3,9 @@
 > [!WARNING]
 > Not properly tested, work in progress. Contributions/correction welcome.
 
-**`orbiseu`** is a data.table-based **[R](https://www.r-project.org/)** package toolkit for making licensed Moody's Orbis firm-level exports usable as representative European firm-year panels. It translates the workflow of Kalemli-Özcan, Sørensen, Villegas-Sanchez, Volosovych, and Yeşiltaş (2024), "How to Construct Nationally Representative Firm-Level Data from the Orbis Global Database", American Economic Journal: Macroeconomics, [doi:10.1257/mac.20220036](https://doi.org/10.1257/mac.20220036), into reusable R functions.
+**`orbiseu`** is a [`data.table`](https://CRAN.R-project.org/package=data.table)-based **[R](https://www.r-project.org/)** package toolkit for making licensed Moody's Orbis firm-level exports usable as representative European firm-year panels. It translates the workflow of **Kalemli-Özcan, Sørensen, Villegas-Sanchez, Volosovych, and Yeşiltaş (2024), "How to Construct Nationally Representative Firm-Level Data from the Orbis Global Database", American Economic Journal: Macroeconomics, [doi:10.1257/mac.20220036](https://doi.org/10.1257/mac.20220036)**, into reusable R functions.
 
-The package does not contain or redistribute Orbis data. It provides tools to clean exports you are licensed to use and to benchmark them against Eurostat data fetched via the CRAN package `eurodata`.
+The package does not contain or redistribute Orbis data. It provides tools to clean exports you are licensed to use and to benchmark them against Eurostat data fetched via the CRAN package [`eurodata`](https://CRAN.R-project.org/package=eurodata).
 
 ## Main workflow
 
