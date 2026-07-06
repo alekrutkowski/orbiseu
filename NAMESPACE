@@ -1,5 +1,5 @@
 import(data.table)
-importFrom(magrittr,%>%)
+importFrom(magrittr,"%>%")
 importFrom(stats,complete.cases)
 importFrom(utils,head,tail,read.csv,write.csv)
 export(bvd_account_summary)
