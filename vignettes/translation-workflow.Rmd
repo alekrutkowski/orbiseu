@@ -1,0 +1,77 @@
+---
+title: "Constructing a representative Orbis EU panel"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Constructing a representative Orbis EU panel}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, eval=FALSE}
+library(orbiseu)
+library(data.table)
+library(magrittr)
+```
+
+This vignette shows the practical R workflow corresponding to the article and replication do files of Kalemli-Özcan et al. (2024), doi:10.1257/mac.20220036. The goal is to build a firm-year panel that is as representative as possible by combining historical vintages rather than relying on a single download.
+
+## 1. Read BvD exports
+
+```{r, eval=FALSE}
+vintages <- list(
+  orbis_2005 = bvd_read("data/orbis_2005.csv"),
+  orbis_2009 = bvd_read("data/orbis_2009.csv"),
+  orbis_2013 = bvd_read("data/orbis_2013.csv"),
+  amadeus_2014 = bvd_read("data/amadeus_2014.csv")
+)
+```
+
+## 2. Clean vintages and reshape relative years
+
+```{r, eval=FALSE}
+cleaned <- vintages %>%
+  lapply(bvd_clean_vintage, already_long = FALSE, n_years = 5)
+```
+
+Use `n_years = 10` for Amadeus extracts where ten relative years are available.
+
+## 3. Merge vintages
+
+```{r, eval=FALSE}
+id_changes <- bvd_read("data/bvd_id_changes.csv")
+merged <- bvd_merge_vintages(cleaned, id_changes = id_changes)
+```
+
+The merge keeps non-missing values from higher-priority vintages, which is the R analogue of Stata's merge/update/replace workflow in the replication code.
+
+## 4. Account duplicates and switchers
+
+```{r, eval=FALSE}
+bvd_detect_account_duplicates(merged)
+
+panel <- merged %>%
+  bvd_resolve_account_duplicates(strategy = "prefer_consolidated") %>%
+  bvd_drop_account_switchers(action = "drop") %>%
+  bvd_clean_financial_panel() %>%
+  bvd_sample_flags()
+```
+
+Use `strategy = "prefer_unconsolidated"` for sensitivity checks aimed at minimizing parent-subsidiary double counting. Use `strategy = "keep_all"` only if the next step explicitly handles account families.
+
+## 5. Ownership links
+
+```{r, eval=FALSE}
+ownership <- bvd_read("data/shareholder_links.csv") %>%
+  bvd_prepare_shareholder_links() %>%
+  bvd_aggregate_ownership(threshold = 10) %>%
+  bvd_fill_ownership_panel()
+
+panel <- bvd_merge_ownership_financials(panel, ownership)
+```
+
+## 6. Diagnostics
+
+```{r, eval=FALSE}
+orbis_pipeline_report(panel)
+bvd_sme_shares(panel, by = c("CNTRYCDE", "YEAR"))
+```

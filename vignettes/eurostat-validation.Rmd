@@ -1,0 +1,50 @@
+---
+title: "Eurostat validation with eurodata"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Eurostat validation with eurodata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, eval=FALSE}
+library(orbiseu)
+library(data.table)
+```
+
+The paper validates Orbis coverage and size distributions against Eurostat Structural Business Statistics and Business Demography. `orbiseu` uses the CRAN package `eurodata` for Eurostat access.
+
+## Download SBS turnover
+
+```{r, eval=FALSE}
+sbs <- eurostat_fetch_sbs(
+  code = "sbs_sc_sca_r2",
+  countries = c("AT", "BE", "CZ", "DE", "ES", "FR", "IT"),
+  years = 2008:2012,
+  indicator = "V12110",
+  size_class = "TOTAL"
+)
+```
+
+The Eurostat dimensions can differ by dataset. Use `eurodata::describe()` or `eurodata::find()` to inspect codes and dimensions before using a new table.
+
+## Compute coverage ratios
+
+```{r, eval=FALSE}
+panel <- bvd_read("panel.csv")
+coverage <- bvd_validate_coverage(
+  orbis = panel[NACE1 == "C"],
+  official = sbs[NACE1 == "C"],
+  orbis_value = "OPER_TURN",
+  official_value = "VALUE",
+  by = c("CNTRYCDE", "YEAR")
+)
+```
+
+## Size distribution
+
+```{r, eval=FALSE}
+bvd_size_distribution(panel[NACE1 == "C"], by = c("CNTRYCDE", "YEAR"))
+```
+
+The package deliberately requires the analyst to inspect common sector-year cells. This avoids inflating coverage when Eurostat is missing a sector-year denominator.

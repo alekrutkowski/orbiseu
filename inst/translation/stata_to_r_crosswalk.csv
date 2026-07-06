@@ -1,0 +1,60 @@
+stata_do_file,primary_r_functions,translation_note
+App-A.2-Downloading-from-Orbis-and-Amadeus-Databases/Table-A.2.1/generating_Table_A_2_1.do,manual review,See source do file. Use package primitives by workflow stage.
+App-A.2-Downloading-from-Orbis-and-Amadeus-Databases/Table-A.2.2/orbishist_2006_mar2023.do,manual review,See source do file. Use package primitives by workflow stage.
+App-A.2-Downloading-from-Orbis-and-Amadeus-Databases/Table-A.2.2/orbiswrds_mar2023.do,manual review,See source do file. Use package primitives by workflow stage.
+App-A.5.1-Vintage-Raw-Data-Financials/1. financials_orbis_2009_5_latest_years_rename.do,"bvd_read(), bvd_clean_vintage()",Header/name normalization and financial variable naming.
+App-A.5.1-Vintage-Raw-Data-Financials/2. financials_orbis_2009_5_latest_years_reshape.do,bvd_reshape_relative_years(),Wide relative-year exports to long firm-year data.
+App-A.5.1-Vintage-Raw-Data-Financials/3. financials_orbis_2009_5_latest_years_cleaning.do,"bvd_clean_vintage(), bvd_standardize_ids()","Drop empty rows, create ID_NUMBER and CNTRYCDE, convert financials, resolve within-vintage duplicates."
+App-A.5.1-Vintage-Raw-Data-Financials/4. financials_orbis_2009_year_correct.do,bvd_assign_calendar_year(),Convert account closing date to statistical year using June 1 cutoff.
+App-A.5.1-Vintage-Raw-Data-Financials/5. financials_orbis_2009_5_latest_years_split.do,user chunking plus bvd_clean_vintage(),Country or region splitting is implemented by applying functions to list chunks.
+App-A.5.1-Vintage-Raw-Data-Financials/6. financials_orbis_2009_5_latest_years_correct_bvdid.do,bvd_merge_vintages(id_changes=),BvD ID correspondence handling.
+App-A.5.2-Merging-Vintages-and-A.5.3-Cleaning-Merged-Data-Financials/step_1_merge_2005_2009_orbis.do,"bvd_merge_vintages(), bvd_clean_financial_panel()",Merge/update vintages and apply panel cleaning filters.
+App-A.5.2-Merging-Vintages-and-A.5.3-Cleaning-Merged-Data-Financials/step_2_merge_2005_2009_2013_orbis.do,"bvd_merge_vintages(), bvd_clean_financial_panel()",Merge/update vintages and apply panel cleaning filters.
+App-A.5.2-Merging-Vintages-and-A.5.3-Cleaning-Merged-Data-Financials/step_3_merge_2005_2009_2013_orbis_amadeus_2010_wrds.do,"bvd_merge_vintages(), bvd_clean_financial_panel()",Merge/update vintages and apply panel cleaning filters.
+App-A.5.2-Merging-Vintages-and-A.5.3-Cleaning-Merged-Data-Financials/step_4_merge_step3_data_amadeus_2014.do,"bvd_merge_vintages(), bvd_clean_financial_panel()",Merge/update vintages and apply panel cleaning filters.
+App-A.5.2-Merging-Vintages-and-A.5.3-Cleaning-Merged-Data-Financials/step_4_merge_step3_data_amadeus_2014_correct_New_Eurozone.do,"bvd_merge_vintages(), bvd_clean_financial_panel()",Merge/update vintages and apply panel cleaning filters.
+App-A.5.2-Merging-Vintages-and-A.5.3-Cleaning-Merged-Data-Financials/step_5_cleaning_financials.do,"bvd_merge_vintages(), bvd_clean_financial_panel()",Merge/update vintages and apply panel cleaning filters.
+App-B.1.1-Vintage-Raw-Data-Ownership/1.orbis_ownership_2009_rename.do,bvd_prepare_shareholder_links(),Raw ownership links into tidy owner-firm-year records.
+App-B.1.1-Vintage-Raw-Data-Ownership/2.orbis_ownership_2009_by_country_append.do,bvd_prepare_shareholder_links(),Raw ownership links into tidy owner-firm-year records.
+App-B.1.1-Vintage-Raw-Data-Ownership/3.orbis_ownership_2009_split.do,bvd_prepare_shareholder_links(),Raw ownership links into tidy owner-firm-year records.
+App-B.1.2-Shareholder-Links-and-B.1.3-Merging-Ownership-with-Financial-Panel/step_0_orbis_ownership.do,"bvd_prepare_shareholder_links(), bvd_aggregate_ownership(), bvd_merge_ownership_financials()",Foreign ownership indicators and merge with financials.
+App-B.1.2-Shareholder-Links-and-B.1.3-Merging-Ownership-with-Financial-Panel/step_1_combine_orbis_amadeus_ownership_SHH.do,"bvd_prepare_shareholder_links(), bvd_aggregate_ownership(), bvd_merge_ownership_financials()",Foreign ownership indicators and merge with financials.
+App-B.1.2-Shareholder-Links-and-B.1.3-Merging-Ownership-with-Financial-Panel/step_2_combine_bvd_financials_and_ownership_SHH.do,"bvd_prepare_shareholder_links(), bvd_aggregate_ownership(), bvd_merge_ownership_financials()",Foreign ownership indicators and merge with financials.
+App-B.3-Coverage-of-Foreign-Ownership/generating_Figure_B_3_1.do,manual review,See source do file. Use package primitives by workflow stage.
+App-B.3-Coverage-of-Foreign-Ownership/generating_Table_B_3_1_B_3_2_B_3_3.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.1-Detailed-Statistics-for-the-Aggregate-Economy/generating_Table_D_1_1.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.1-Detailed-Statistics-for-the-Aggregate-Economy/generating_Table_D_1_2.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.2-Detailed-Statistics-for-the-Manufacturing-Sector/generating_Table_D_2_1.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.2-Detailed-Statistics-for-the-Manufacturing-Sector/generating_Table_D_2_2.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.2-Detailed-Statistics-for-the-Manufacturing-Sector/generating_Table_D_2_3_D_2_4.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.2-Detailed-Statistics-for-the-Manufacturing-Sector/generating_Table_D_2_5.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.3-Alternative-Data-Sets-and-Their-Coverage/generating_Table_D_3_1.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.3-Alternative-Data-Sets-and-Their-Coverage/generating_Table_D_3_2_bvd_sector_distribution.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.3-Alternative-Data-Sets-and-Their-Coverage/generating_Table_D_3_2_bvd_size_distribution.do,manual review,See source do file. Use package primitives by workflow stage.
+App-D.4-Treatment-of-Various-Account-Types/generating_Figure_D_4_1_D_4_2.do,"bvd_detect_account_duplicates(), bvd_resolve_account_duplicates(), bvd_account_summary()",Account-type duplicate diagnostics and resolution.
+Section-3-Validation/step1_BvD_sums_by_c_nace1_y_for_different_samples.do,"bvd_validate_coverage(), bvd_size_distribution()",Coverage and size-distribution validation tables.
+Section-3-Validation/step2_compute_output_empl_based_coverage_ratios.do,"bvd_validate_coverage(), bvd_size_distribution()",Coverage and size-distribution validation tables.
+Section-3-Validation/step3_generating_Table1_Table2_Table3.do,"bvd_validate_coverage(), bvd_size_distribution()",Coverage and size-distribution validation tables.
+Section-4-Application-New-Facts-on-SMEs-based-on-Orbis/generating_Table_4.do,"bvd_sme_shares(), bvd_size_distribution()",SME shares and missing sector-size summaries.
+Section-4-Application-New-Facts-on-SMEs-based-on-Orbis/generating_Table_A_1.do,"bvd_sme_shares(), bvd_size_distribution()",SME shares and missing sector-size summaries.
+Section-5-Application-Trends-in-Industry-Concentration-Figure-2/step1_eu_wide_country_gdp_weighted_orbis_sums_aggregated_over_oecdstan_sector.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-2/step2_market_shares_exc_sec.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-2/step2_market_shares_normalized_by_oecd_stan.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-2/step3_plot_Figure2.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-3/generating_Figure 3.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-A.4/step1_cleaned_firm_sample.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-A.4/step2_HHI_c_s_y_sums.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-A.4/step3_eu_wide_s_y_sums.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-A.4/step4_concentration_measures.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration-Figure-A.4/step5_plot_Figure_A.4.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration/step1_cleaned_firm_sample_fdi_initial_exc_duplicates.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration/step1_cleaned_firm_sample_fdi_timevar_exc_duplicates.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration/step2_cleaned_firm_sample_exc_switchers.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration/step3_eu_wide_country_gdp_weighted_orbis_sums.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration/step4_market_shares.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Section-5-Application-Trends-in-Industry-Concentration/step5_plot_Figure_1_4_A_1_A_2_A_3.do,"bvd_market_share_topn(), bvd_concentration_topn(), bvd_eu_concentration()","Top-firm concentration, foreign-domestic split, and EU aggregation."
+Supplementary-Data-Files/Do_files/Compustat_Global.do,bvd_concentration_topn() on external listed-firm data,Compustat comparison is supported by generic concentration functions.
+Supplementary-Data-Files/Do_files/Eurostat_BD_aggregates.do,"eurostat_fetch_bd(), eurostat_standardize()",Eurostat Business Demography download and standardization.
+Supplementary-Data-Files/Do_files/Eurostat_SBS_aggregates.do,"eurostat_fetch_sbs(), eurostat_standardize(), bvd_validate_coverage()","Eurostat SBS download, standardization, and benchmark aggregation."
+Supplementary-Data-Files/Do_files/OECD_STAN_A64.do,bvd_validate_coverage() with external official aggregates,STAN denominators can be passed as official data.
+Supplementary-Data-Files/Do_files/WB_GDP.do,external GDP weights plus bvd_eu_concentration(),"GDP weight preparation is left to the user or external source, then passed as gdp."

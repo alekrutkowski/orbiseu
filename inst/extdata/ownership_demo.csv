@@ -1,0 +1,7 @@
+ID_NUMBER,YEAR,CNTRYCDE,SHARCOUN,SHARDPER,SHARTPER,SHARNAME,SHARTYPE
+AT0001,2006,AT,AT,100,100,Local Owner,Industrial company
+AT0002,2006,AT,DE,25,25,Foreign Owner,Industrial company
+AT0003,2006,AT,US,WO,WO,Foreign Parent,Corporate
+BE0001,2006,BE,BE,100,100,Local Owner,Individual
+BE0002,2006,BE,,100,100,Private individuals,Private individual(s)
+BE0003,2006,BE,FR,MO,MO,Foreign Parent,Corporate

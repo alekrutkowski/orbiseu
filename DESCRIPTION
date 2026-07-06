@@ -1,0 +1,40 @@
+Package: orbiseu
+Title: Make Orbis Firm-Level Data Representative for European Economies
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Alek", family = "Rutkowski", email = "alek.rutkowski@gmail.com", role = c("aut", "cre")),
+    person(given = "Şebnem", family = "Kalemli-Özcan", role = "ctb", comment = "Methodological source: Kalemli-Özcan et al. (2024), doi:10.1257/mac.20220036"),
+    person(given = "Bent E.", family = "Sørensen", role = "ctb", comment = "Methodological source: Kalemli-Özcan et al. (2024), doi:10.1257/mac.20220036"),
+    person(given = "Carolina", family = "Villegas-Sanchez", role = "ctb", comment = "Methodological source: Kalemli-Özcan et al. (2024), doi:10.1257/mac.20220036"),
+    person(given = "Vadym", family = "Volosovych", role = "ctb", comment = "Methodological source: Kalemli-Özcan et al. (2024), doi:10.1257/mac.20220036"),
+    person(given = "Sevcan", family = "Yeşiltaş", role = "ctb", comment = "Methodological source: Kalemli-Özcan et al. (2024), doi:10.1257/mac.20220036")
+  )
+Description: A data.table-based toolkit for constructing firm-year panels from
+    licensed Bureau van Dijk Orbis and Amadeus exports, resolving account-type
+    duplication, handling historical vintages, adding ownership indicators,
+    benchmarking against Eurostat Structural Business Statistics and Business
+    Demography via the CRAN package eurodata, and computing SME and industry
+    concentration diagnostics. The package translates the approach and replication
+    code of Kalemli-Özcan, Sørensen, Villegas-Sanchez, Volosovych, and Yeşiltaş
+    (2024) <doi:10.1257/mac.20220036> into reusable R functions. It does not
+    redistribute Orbis data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.1.0)
+Imports:
+    data.table (>= 1.14.0),
+    magrittr,
+    eurodata,
+    haven,
+    utils,
+    stats
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/alekrutkowski/orbiseu
+BugReports: https://github.com/alekrutkowski/orbiseu/issues
+Config/testthat/edition: 3
