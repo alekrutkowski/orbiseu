@@ -1,7 +1,7 @@
 # orbiseu
 
 > [!WARNING]
-> Not properly tests, work in progress. Contributions/correction welcome.
+> Not properly tested, work in progress. Contributions/correction welcome.
 
 **`orbiseu`** is a data.table-based **[R](https://www.r-project.org/)** package toolkit for making licensed Moody's Orbis firm-level exports usable as representative European firm-year panels. It translates the workflow of Kalemli-Özcan, Sørensen, Villegas-Sanchez, Volosovych, and Yeşiltaş (2024), "How to Construct Nationally Representative Firm-Level Data from the Orbis Global Database", American Economic Journal: Macroeconomics, [doi:10.1257/mac.20220036](https://doi.org/10.1257/mac.20220036), into reusable R functions.
 
