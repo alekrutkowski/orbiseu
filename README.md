@@ -68,7 +68,7 @@ eu_ms8 <- bvd_eu_concentration(ms8, gdp = gdp_weights)
 
 ## Stata-to-R translation map
 
-See [`inst/translation/stata_to_r_crosswalk.csv`](https://github.com/alekrutkowski/orbiseu/blob/main/inst/translation/stata_to_r_crosswalk.csv) for a file-by-file mapping from the uploaded replication do files to package functions. The package covers the practical components: relative-year reshaping, BvD ID handling, vintage merging, account duplicate resolution, ownership aggregation, Eurostat benchmarking, SME shares, and concentration measures.
+See [`inst/translation/stata_to_r_crosswalk.csv`](https://github.com/alekrutkowski/orbiseu/blob/main/inst/translation/stata_to_r_crosswalk.csv) for a file-by-file mapping from the Stata do files (from the [Replication package](https://doi.org/10.3886/E187541V1)) to `orbiseu`'s R functions. The package covers the practical components: relative-year reshaping, BvD ID handling, vintage merging, account duplicate resolution, ownership aggregation, Eurostat benchmarking, SME shares, and concentration measures.
 
 ## Installation
 
